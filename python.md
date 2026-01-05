@@ -70,7 +70,7 @@ Choose element from array:
 random.choice([array])
 ```
 
-## Date and Time ([docs](https://docs.python.org/3/library/datetime.html#module-datetime))
+## Datetime ([docs](https://docs.python.org/3/library/datetime.html#module-datetime))
 
 ```
 import datetime
@@ -82,7 +82,7 @@ Represents a date in the ideal Gregorian calendar.
 
 Initialization:
 ```
-date(year, month, day)
+date([year], [month], [day])
 ```
 
 Get today's date:
@@ -90,7 +90,7 @@ Get today's date:
 date.today()
 ```
 
-Get the date of a timestamp object:
+Get a date from a timestamp object:
 ```
 date.fromtimestamp([timestamp])
 ```
@@ -111,7 +111,7 @@ The local time of day, independent of any particular day.
 
 Initialize:
 ```
-datetime.time([hour], [minute], [second], [microsecond], [timezone], ...)
+time([hour], [minute], [second], [microsecond], [timezone], ...)
 ```
 
 Get time from an ISO format string:
@@ -148,34 +148,43 @@ Get the current time as a `datetime`, optionally passing time zone information:
 datetime.now([timezone])
 ```
 
-Get the current UTC time as a `datetime`
-```
-datetime.utcnow()
-```
-
 Get `datetime` from an ISO 8601 format string:
 ```
 datetime.fromisoformat()
+```
+
+Get `datetime` from a POSIX timestamp:
+```
+datetime.fromtimestamp([timestamp])
 ```
 
 Get a POSIX timestamp from the `datetime`
 ```
 datetime.timestamp()
 ```
-- Same format as time.time()
 
-Get an ISO format timestamp string for the `datetime`:
+Get an ISO format time string for the `datetime`:
 ```
-datetime.isoformat
+datetime.isoformat(...)
 ```
 
-### Time Zones
+Get just the `date` object of a datetime:
+```
+datetime.date()
+```
 
-Can be represented with the class `datetime.timezone`
+Get just the time object of a datetime:
+```
+datetime.time()
+```
+
+### Time Zone
+
+Can be represented with the class `timezone`
 
 Initialization:
 ```
-datetime.timezone([offset])
+timezone([offset])
 ```
 - Offset is a `timedelta` object with a value between -24 hours and +24 hours.
 
@@ -195,4 +204,15 @@ Initialize:
 Get the duration in seconds:
 ```
 timedelta.total_seconds()
+```
+
+## Time ([docs](https://docs.python.org/3/library/time.html))
+
+```
+import time
+```
+
+Get POSIX timestamp for the current time of day:
+```
+time.time()
 ```
