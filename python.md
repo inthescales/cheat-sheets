@@ -70,6 +70,32 @@ Choose element from array:
 random.choice([array])
 ```
 
+## Getopt ([docs](https://docs.python.org/3/library/getopt.html))
+
+```
+import getopt
+```
+
+Define arguments and bind them to variables:
+```
+try:
+    opts, params = getopt.getopt(sys.argv[1:], "ov:", ["option", "option-with-value="])
+except getopt.GetoptError:
+	# Handle errors here
+```
+- In short options, a letter followed by a `:` indicates an option that takes a value, or `::` if a value is optional.
+- In long options, a letter followed by an `=` indicates an option that takes a value, or `=?` if a value is optional.
+- `params` holds any parameters left over.
+
+Handle arguments and their values
+```
+for opt, arg in opts:
+    if opt in ["-o]", "--option"]:
+        # Handle option, with any argument value bound to 'arg'
+    elif...
+    	# Handle more args the same way
+```
+
 ## Datetime ([docs](https://docs.python.org/3/library/datetime.html#module-datetime))
 
 ```
