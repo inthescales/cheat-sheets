@@ -43,6 +43,11 @@ Serialize structured data to JSON:
 ```
 json.dumps([data])
 ```
+_Useful params_:
+- `indent`: pretty-print, indenting with the given number of spaces (if int) or the given whitespace character (if str).
+- `ensure-ascii`: must be `False` in order to write non-ASCII characters.
+- `sort-keys`: output the keys of `dict`s in sorted order.
+- `cls`: a custom JSONEncoder class to use
 
 Read JSON from a string:
 ```
@@ -85,9 +90,9 @@ except getopt.GetoptError:
 ```
 - In short options, a letter followed by a `:` indicates an option that takes a value, or `::` if a value is optional.
 - In long options, a letter followed by an `=` indicates an option that takes a value, or `=?` if a value is optional.
-- `params` holds any parameters left over.
+- Output is a tuple of size 2, with `opts` holding key-option pairs, and `params` jholding non-option parameters.
 
-Handle arguments and their values
+Handle arguments and their values:
 ```
 for opt, arg in opts:
     if opt in ["-o]", "--option"]:
