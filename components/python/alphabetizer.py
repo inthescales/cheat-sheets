@@ -12,7 +12,7 @@ class Alphabetizer():
     """Alphabetizes lists according to a custom alphabetical order"""
 
     _priority_list = [
-        "a"
+        "a",
         "b",
         "c",
         "d",
