@@ -1,26 +1,30 @@
 # FFMPEG
 
-**Extract a portion of a video:**
+Extract a portion of a video:
+```
+ffmpeg -i [input_file] -ss [start_time] -to [end-time] [output_file]
+```
 
-`ffmpeg -i [input.mpg] -ss 00:00:30 -t 00:00:05 -vcodec copy -acodec copy [output.mpg]`
+- `-i` identifies the input file.
+- `-ss` specifies the start time of the clip.
+- `-to` specifies the end time of the clip.
+- `-t` can be used in place of `-to` to specify duration instead of end time.
 
-- -i: Input file.
-- -ss: Start time index of the clip.
-- -t: Duration of the clip to extract.
+Extract a subtitle track into an .srt file:
+```
+ffmpeg -i [input_file] -map 0:s:0 [subtitle_file]
+```
 
-**Extract a subtitle track into an .srt file:**
+- `-i` identifies the input file.
+- `-map` designates one or more input streams as a source for the output file.
+- `s:0:n` Specifies a subtitle stream. The variable `n` is the subtitle track to use.
 
-`ffmpeg -i [video.mkv] -map 0:s:0 [subtitles.srt]`
+Create a video from an audio file and an image:
+```
+ffmpeg -i [image.jpg] -i [audio.mp3] -r 1 -loop 1 -acodec copy -shortest [output.mp4]
+```
 
-- -i: Input file.
-- -map: Designate one or more input streams as a source for the output file.
-- s:0: Specifies a subtitle stream. The number is the subtitle track to use.
-
-**Create a video from an audio file and an image:**
-
-`ffmpeg -r 1 -loop 1 -i [image.jpg] -i [audio.mp3] -acodec copy -shortest [output.mp4]`
-
-- -i: Image file, audio file.
-- -acodec: Force audio codec. Copy indicates that it should be copied as is.
-- -r: Frame rate.
-- -shortest: Finish encoding when shortest input stream ends.
+- `-i` identifes the image file and the audio file.
+- `-r` indicates the frame rate.
+- `-acodec`: force audio codec. Copy indicates that it should be copied as is.
+- `-shortest`: finish encoding when shortest input stream ends.
