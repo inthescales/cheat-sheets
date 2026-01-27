@@ -1,2 +1,3 @@
-# cheat-sheets
-Notes documents for assorted frequently used commands
+# Cheat Sheets
+
+Personal repository of cheat sheets for command-line tools, selected programming language documentation, and reusable code components.
