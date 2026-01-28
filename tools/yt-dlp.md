@@ -31,6 +31,8 @@ yt-dlp [video_ID]
 
 - Uses highest quality by default
 
+---
+
 Download a portion of a video:
 ```
 yt-dlp [video ID] --download-sections "*[start_time]-[end_time]"
@@ -38,6 +40,8 @@ yt-dlp [video ID] --download-sections "*[start_time]-[end_time]"
 
 - Time format: `HH:MM:SS`
 - Fractional seconds can be given with a decimal point
+
+---
 
 Download only audio:
 ```
