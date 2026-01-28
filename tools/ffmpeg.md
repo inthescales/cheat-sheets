@@ -1,4 +1,4 @@
-# FFMPEG
+# FFMPEG ([docs](https://ffmpeg.org/documentation.html))
 
 Extract a portion of a video:
 ```
