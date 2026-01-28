@@ -21,10 +21,11 @@ ffmpeg -i [input_file] -map 0:s:0 [subtitle_file]
 
 Create a video from an audio file and an image:
 ```
-ffmpeg -i [image.jpg] -i [audio.mp3] -r 1 -loop 1 -acodec copy -shortest [output.mp4]
+ffmpeg -r 1 -loop 1 -i [image.jpg] -i [audio.mp3] -acodec copy -shortest [output.mp4]
 ```
 
 - `-i` identifes the image file and the audio file.
 - `-r` indicates the frame rate.
 - `-acodec`: force audio codec. Copy indicates that it should be copied as is.
 - `-shortest`: finish encoding when shortest input stream ends.
+- Be aware that the order of the arguments matters.
