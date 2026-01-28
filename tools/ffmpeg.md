@@ -10,6 +10,8 @@ ffmpeg -i [input_file] -ss [start_time] -to [end-time] [output_file]
 - `-to` specifies the end time of the clip.
 - `-t` can be used in place of `-to` to specify duration instead of end time.
 
+---
+
 Extract a subtitle track into an .srt file:
 ```
 ffmpeg -i [input_file] -map 0:s:0 [subtitle_file]
@@ -18,6 +20,8 @@ ffmpeg -i [input_file] -map 0:s:0 [subtitle_file]
 - `-i` identifies the input file.
 - `-map` designates one or more input streams as a source for the output file.
 - `s:0:n` Specifies a subtitle stream. The variable `n` is the subtitle track to use.
+
+---
 
 Create a video from an audio file and an image:
 ```
